@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/ui/JFramesave2.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/entities/Utilisateur.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/utils/JDBC.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/ui/JFrameLogin.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/entities/Compte.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/JFrameSaveAdmin.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/ui/JFrameUtilisateur.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/gestionnaire/GestionnaireAdmin.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/entities/Admin.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/gestionnaire/GestionnaireUtilisateur.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/ui/JFrameSaveCompte.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/controlleur/Controleur.java</file>
+            <file>file:/C:/Users/LECAUCHY/Documents/NetBeansProjects/JavaApplication5/summer-code/src/com/summercoding/bank/gestionnaire/GestionnaireCompte.java</file>
+        </group>
+    </open-files>
+</project-private>
