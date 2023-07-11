@@ -27,5 +27,10 @@ public class GestionnaireUtilisateur {
      public List<Utilisateur> listAllUtilisateur() throws SQLException {
             return utilisateur.getAllUtilisateur();
     }
+     
+     
+     public Utilisateur login(String login, String password)  throws SQLException {
+            return utilisateur.getByLoginAndPassword(login,password);
+     }
     
 }

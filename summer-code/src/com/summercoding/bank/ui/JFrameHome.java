@@ -5,11 +5,24 @@
  */
 package com.summercoding.bank.ui;
 
+import com.summercoding.bank.controlleur.Controleur;
+import com.summercoding.bank.entities.Admin;
+import com.summercoding.bank.entities.Compte;
+import com.summercoding.bank.entities.Utilisateur;
+import java.sql.SQLException;
+import static java.util.Collections.list;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author LECAUCHY
  */
 public class JFrameHome extends javax.swing.JFrame {
+    Controleur controleur = new Controleur();
+    
 
     /**
      * Creates new form JFrameHome
@@ -27,21 +40,258 @@ public class JFrameHome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu3 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu7 = new javax.swing.JMenu();
+        menuAdmin = new javax.swing.JMenu();
+        menuCreate = new javax.swing.JMenuItem();
+        menuListe = new javax.swing.JMenuItem();
+        menuUtilisateur = new javax.swing.JMenu();
+        menucreate1 = new javax.swing.JMenuItem();
+        menuliste1 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        menucreate2 = new javax.swing.JMenuItem();
+        menuliste2 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+
+        jMenu3.setText("jMenu3");
+
+        jMenu5.setText("jMenu5");
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        jMenuItem2.setText("jMenuItem2");
+
+        jRadioButton1.setText("jRadioButton1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menu");
+
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(table);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jMenu7.setText("Help");
+        jMenuBar2.add(jMenu7);
+
+        menuAdmin.setText("Admin                      ");
+
+        menuCreate.setText("Create");
+        menuCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuCreateActionPerformed(evt);
+            }
+        });
+        menuAdmin.add(menuCreate);
+
+        menuListe.setText("Liste");
+        menuListe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuListeActionPerformed(evt);
+            }
+        });
+        menuAdmin.add(menuListe);
+
+        jMenuBar2.add(menuAdmin);
+
+        menuUtilisateur.setText("Utilisateur                    ");
+
+        menucreate1.setText("create");
+        menucreate1.setToolTipText("");
+        menucreate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menucreate1ActionPerformed(evt);
+            }
+        });
+        menuUtilisateur.add(menucreate1);
+
+        menuliste1.setText("liste");
+        menuliste1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuliste1ActionPerformed(evt);
+            }
+        });
+        menuUtilisateur.add(menuliste1);
+
+        jMenuBar2.add(menuUtilisateur);
+
+        jMenu4.setText("Compte              ");
+
+        menucreate2.setText("create");
+        menucreate2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menucreate2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menucreate2);
+
+        menuliste2.setText("liste");
+        menuliste2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuliste2ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menuliste2);
+
+        jMenuBar2.add(jMenu4);
+
+        jMenu6.setText("A propos");
+        jMenuBar2.add(jMenu6);
+
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menuListeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuListeActionPerformed
+        try {
+            // TODO add your handling code here://affiche toute la table admin
+            String [] columns = new String [] {
+                "id" , "Nom", "Login"};
+            
+            String [] [] datas = new String [] [] {
+                {"1" , "toto" , "toto"},
+                {"2","titi" , "titi"},
+                {"3" , "tata" , "tata"},
+                {"4" , "tata" , "tata"}
+            };
+            
+            List<Admin> listAdmin = controleur.routeVersListAllAdmin();
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("id");
+            model.addColumn("Nom");
+            model.addColumn("Login");
+            
+            
+            for (Admin ad:listAdmin){
+                model.addRow(new String [] {ad.getIdadmin()+"" , ad.getNom()+"" , ad.getLogin()});
+                
+            }
+            
+            table.setModel(model);
+            
+            //String [] 
+            
+            //table.setModel(new DefaultTableModel(datas,columns));
+        } catch (SQLException ex) {
+            Logger.getLogger(JFrameHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_menuListeActionPerformed
+
+    private void menuCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCreateActionPerformed
+        // TODO add your handling code here:
+        new JFrameSaveAdmin().setVisible(true);
+        
+    }//GEN-LAST:event_menuCreateActionPerformed
+
+    private void menucreate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menucreate1ActionPerformed
+        // TODO add your handling code here:
+        new JFramesave2().setVisible(true);
+    }//GEN-LAST:event_menucreate1ActionPerformed
+
+    private void menuliste1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuliste1ActionPerformed
+        try {
+            // TODO add your handling code here:
+            List<Utilisateur> listUtilisateur = controleur.routeVersListAllUtilisateur();
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("id");
+            model.addColumn("login");
+            model.addColumn("nom");
+            model.addColumn("prenom");
+            model.addColumn("datenaiss");
+            model.addColumn("genre");
+            model.addColumn("idadmin");
+            
+            
+            for (Utilisateur ad:listUtilisateur){
+                model.addRow(new String [] {ad.getIduser()+"" , ad.getLogin()+"" , ad.getNom()+"" ,ad.getPrenom()+"" , ad.getDatenaiss()+"" , ad.isGenre()+"", ad.getIdadmin()+"" });
+                
+            }
+            
+            table.setModel(model);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFrameHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_menuliste1ActionPerformed
+
+    private void menuliste2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuliste2ActionPerformed
+        // TODO add your handling code here:
+        
+         try {
+            // TODO add your handling code here:
+            List<Compte> listCompte = controleur.routeVersListAllCompte();
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("idcompte");
+            model.addColumn("solde");
+            model.addColumn("iduser");
+            model.addColumn("idadmin");
+           
+            
+            
+            for (Compte ad:listCompte){
+                model.addRow(new String [] {ad.getIdcompte()+"" , ad.getSolde()+"" , ad.getIduser()+"" ,ad.getIdadmin()+""  });
+                
+            }
+            
+            table.setModel(model);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFrameHome.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_menuliste2ActionPerformed
+
+    private void menucreate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menucreate2ActionPerformed
+        // TODO add your handling code here:
+       new JFrameSaveCompte().setVisible(true);
+    }//GEN-LAST:event_menucreate2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +329,28 @@ public class JFrameHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenu menuAdmin;
+    private javax.swing.JMenuItem menuCreate;
+    private javax.swing.JMenuItem menuListe;
+    private javax.swing.JMenu menuUtilisateur;
+    private javax.swing.JMenuItem menucreate1;
+    private javax.swing.JMenuItem menucreate2;
+    private javax.swing.JMenuItem menuliste1;
+    private javax.swing.JMenuItem menuliste2;
+    private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
 }

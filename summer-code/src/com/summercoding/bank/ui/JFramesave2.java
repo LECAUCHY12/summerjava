@@ -5,7 +5,7 @@
  */
 package com.summercoding.bank.ui;
 
-import JFrameSave2;
+//import JFrameSave2;
 import com.summercoding.bank.controlleur.Controleur;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -217,7 +217,7 @@ Controleur controleur = new Controleur();
         String password = champpassword.getText();//mon getText n'est pas barrer
         String nom = champnom.getText();
         String prenom = champprenom.getText();
-        LocalDate datenaiss=LocalDate.of(12, Month.MARCH, 2002);
+        LocalDate datenaiss=LocalDate.of(2002, Month.MARCH, 12);
         //String genre=champgenre.getText();
         //String idadmin=comboboxadmin.getText();
         

@@ -5,10 +5,12 @@
  */
 package com.summercoding.bank.gestionnaire;
 
+import com.summercoding.bank.entities.Admin;
 import com.summercoding.bank.entities.Compte;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  *
@@ -22,4 +24,7 @@ public class GestionnaireCompte {
             compte.save(solde, iduser, idadmin);
     
      }
+       public List<Compte> listAllCompte() throws SQLException {
+            return compte.getAllCompte();
+    }
 }

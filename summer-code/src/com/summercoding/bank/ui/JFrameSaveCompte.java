@@ -23,20 +23,26 @@ public class JFrameSaveCompte extends javax.swing.JFrame {
     /**
      * Creates new form JFrameSaveCompte
      */
-    public JFrameSaveCompte() throws SQLException {
-        initComponents();
+    public JFrameSaveCompte() {
         
-        initOtherComponents();
+            initComponents();
+            
+            initOtherComponents();
+       
     }
     
-    private void initOtherComponents() throws SQLException{
+    private void initOtherComponents(){
         
-        for (Admin admin : controleur.routeVerslistAllAdmin()){
+        try {
+            for (Admin admin : controleur.routeVerslistAllAdmin()){
                 ComboBoxIdadmin.addItem(admin.getIdadmin()+" " + admin.getLogin());
-         }
-        
-        for (Utilisateur utilisateur: controleur.routeVersListAllUtilisateur()){
-            ComboBoxIduser.addItem(utilisateur.getIduser()+" "+utilisateur.getLogin());
+            }
+            
+            for (Utilisateur utilisateur: controleur.routeVersListAllUtilisateur()){
+                ComboBoxIduser.addItem(utilisateur.getIduser()+" "+utilisateur.getLogin());
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(JFrameSaveCompte.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
          
@@ -234,11 +240,7 @@ public class JFrameSaveCompte extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new JFrameSaveCompte().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(JFrameSaveCompte.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new JFrameSaveCompte().setVisible(true);
             }
         });
     }
